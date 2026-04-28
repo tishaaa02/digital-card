@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhijit Jalkote — FFF</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f2ed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #f5f2ed;
+    letter-spacing: 2px;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .title {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-weight: 400;
+  }
+
+  .division {
+    font-size: 0.75rem;
+    color: #aaa;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.2rem;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: #ebebeb;
+    margin: 1.75rem 0;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #2c2c2c;
+    border-radius: 50px;
+    background: transparent;
+    color: #2c2c2c;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn:hover {
+    background: #2c2c2c;
+    color: #fff;
+  }
+
+  .btn.primary {
+    background: #2c2c2c;
+    color: #fff;
+  }
+  .btn.primary:hover {
+    background: #444;
+  }
+
+  .contact-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: background 0.15s;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .contact-item:hover {
+    background: #f5f2ed;
+  }
+
+  .icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-wrap svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    word-break: break-all;
+  }
+
+  .qr-section {
+    margin-top: 1.75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .qr-label {
+    font-size: 0.7rem;
+    color: #bbb;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .qr-section img {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+  }
+
+  .contact-item:nth-child(1) { animation-delay: 0.1s; }
+  .contact-item:nth-child(2) { animation-delay: 0.2s; }
+  .contact-item:nth-child(3) { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="avatar">AJ</div>
+
+  <div class="name">Abhijit Jalkote</div>
+  <div class="title">DGM — Sales &amp; Marketing</div>
+  <div class="division">Oleo and Pharma Division</div>
+
+  <div class="divider"></div>
+
+  <div class="actions">
+    <button class="btn primary" onclick="saveContact()">
+      <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Save Contact
+    </button>
+    <button class="btn" onclick="if(navigator.share){navigator.share({title:'Abhijit Jalkote',text:'DGM - Sales and Marketing, Oleo and Pharma Division\nabhijit.j@fff.co.in\n+918125666714'})}else{navigator.clipboard.writeText('abhijit.j@fff.co.in').then(()=>alert('Email copied!'))}">
+      <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:#1a1a1a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Share
+    </button>
+  </div>
+
+  <div class="contact-list">
+    <a class="contact-item" href="mailto:abhijit.j@fff.co.in">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+      <span class="contact-text">abhijit.j@fff.co.in</span>
+    </a>
+    <a class="contact-item" href="tel:+918125666714">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <span class="contact-text">+91 81256 66714</span>
+    </a>
+    <a class="contact-item" href="https://wa.me/918125666714" target="_blank">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <span class="contact-text">WhatsApp Chat</span>
+    </a>
+  </div>
+
+  <div class="qr-section">
+    <div class="qr-label">Scan to connect</div>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAAG8CAIAAAAq0oeIAAAITUlEQVR4nO3dQY4bORQFQcvw/a+s2XsxZkIE+7MUsTZaZUmd4OY1X+/3+xcAa37/9AMA3EQ0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECP789AP87fV6/fQj/Jj3+/3Pf7Py/vg5n/+cFbu+q7v+X0+16/PaxUkTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBgnHb8xXTtqgrTm6HT+64b/TUzbjfizOcNAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyC4cnu+4qmb35N752n3g684+cwn71jf5cbPYhonTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAgeuz1/ql3b4W++G/2b/+98zkkTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtvzy5zcRN94f/pT79pmDidNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECB67PbdB/n833ut94zNP4/fic06aAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEFy5Pf/mffGuu79P/pwVJ+80n/b+nLwXns85aQIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAwbnvuXuYzpu2mT5q2cz/5c/ickyZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIE47bn0+7jPvlaK6Y9zy7T7jRfMe07dvL+9Gm/gyc5aQIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkDwmrbrvHHPe+P94E/dF9+4u5/m5Hf1xt8dJ02AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIxt17fqNpO/ddbnzmFf6ewJnXWjHtPVzhpAkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCB7fk/7NrzTtvY7tpf79ogT9t63/j3BE4+88kN+7TfHSdNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECK7cnk/boq6YtrGd9jy73Hin+bTXOrmFv/E75qQJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAwevG7eeKk3dS33gH9LS7tk966uc17W8X7DKtUU6aAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIy793zaxvbG7fCNr3Xy55w07bNYMW3rPY2TJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgTj7j2fth3e5cY71k+a9j1ccePWe9p37MbP3UkTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBgnH3nu/yzVvvGzfRK6Z9Xru+Y9M22tOeZxonTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAjGbc937Xl3vdaKp26id5m2ZZ72PDd+N05+f6Zx0gQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBg3PZ82i745J73m/fOu0zbRE/7bjz1+3ySkyZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIE47bn0/aqJ3e40+40X3mtp+7lT76H3MVJEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AYLXjdvYaVvvFd+8ZZ62qV8x7XO/0Y3f1RVOmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRBcuT3/Zic37NM24zfu00/+fYMVN27hpzXKSRMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAGCPz/9AH+7cRu7yzdvkHf930/eV37yPZy2Yb9xd7+LkyZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIE47bnK27cqz516z1tXzzteXa58ZmfykkTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBgiu35ytObr2n3Te9YtoWftdmfNp93NPuT18x7T2cxkkTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBgsduz5/q5EZ7l13b6mkb7RVPfZ9PbvOnbdidNAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyCwPX+gaXe+T9tfT9tNn3zmaf/3GzlpAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQPDY7flTd6/Tdtwnf860nfuKaX8H4ORn8dR9upMmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBFduz0/ueac5uR3+Zjfeab7i5D79qZw0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIHjZIAOsc9IECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2A4D+a3EyH6cAooAAAAABJRU5ErkJggg==" alt="QR Code">
+  </div>
+
+</div>
+
+<script>
+function saveContact() {
+  var vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "FN:Abhijit Jalkote",
+    "N:Jalkote;Abhijit;;;",
+    "TITLE:DGM - Sales and Marketing",
+    "ORG:Oleo and Pharma Division",
+    "EMAIL;TYPE=WORK:abhijit.j@fff.co.in",
+    "TEL;TYPE=CELL:+918125666714",
+    "END:VCARD"
+  ].join("\r\n");
+
+  // Method 1: Blob download (works in most browsers)
+  try {
+    var blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "Abhijit_Jalkote.vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    return;
+  } catch(e) {}
+
+  // Method 2: data URI fallback (Google Lens / restricted browsers)
+  try {
+    var encoded = encodeURIComponent(vcard);
+    window.location.href = "data:text/vcard;charset=utf-8," + encoded;
+    return;
+  } catch(e) {}
+
+  // Method 3: Open in new tab as plain text (last resort)
+  var w = window.open();
+  w.document.write("<pre>" + vcard + "</pre>");
+  w.document.title = "Abhijit_Jalkote.vcf";
+}
+</script>
+</body>
+</html>
